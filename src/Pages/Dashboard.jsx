@@ -1,5 +1,6 @@
 import Cards from "../Components/cards";
 import { financialData } from "../Components/data";
+import AreaChart from "../Components/AreaChart";
 
 function Dashboard(){
 return <>
@@ -21,17 +22,14 @@ return <>
 </div>
 
  <div className="flex gap-5 mt-5 ml-5 w-[64%]">
-        <div className="flex-1 bg-white rounded-lg shadow-md border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Charts & Analytics</h2>
-          <div className="h-96 bg-gray-50 rounded-lg flex items-center justify-center">
-            <p className="text-gray-500">Chart content goes here</p>
-          </div>
+        <div className="flex-1 bg-white rounded-lg shadow-md border border-gray-200 p-2">
+           <h2 className="text-lg font-semibold text-gray-800 mb-4">Money flow</h2>
+          <div className="h-100 w-[full] rounded-lg flex items-center justify-center">
+            <AreaChart />
+</div>
         </div>
         </div>
-<div className="flex gap-5 mt-5 ml-5 w-[64%]">         
-  <div className="flex-1 bg-white rounded-lg shadow-md border border-gray-200 p-6">           
-  </div>
-  </div>
+
 
 </>
 }

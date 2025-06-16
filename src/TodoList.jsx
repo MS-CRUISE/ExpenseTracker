@@ -16,10 +16,7 @@ setNewTask("");
     setTask(updatedTsk);
 
     }
-    function MoveTaskAbove(){
-
-
-    }
+ 
     return(
     <div >
         <h2 className="text-3xl justify-center font-black">My First Proper To Do List</h2>

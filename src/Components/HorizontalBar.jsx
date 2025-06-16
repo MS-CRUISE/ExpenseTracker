@@ -25,7 +25,7 @@ const HorizontalBar = () => {
     formatter: '{a}: {c}',
   },
   legend: {
-    bottom: 10,
+    bottom: "30px",
     left: 'center',
     textStyle: {
       fontSize: 12,

@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
+import { useFinance } from './Contextapi'; 
+
 
 const HorizontalBar = () => {
     
   const chartRef = useRef(null);
+  const { totalIncome, totalExpense, totalSavings } = useFinance();
 
   useEffect(() => {
     const chart = echarts.init(chartRef.current);
@@ -46,7 +49,9 @@ const HorizontalBar = () => {
       name: 'Income',
       type: 'bar',
       stack: 'total',
-      data: [3000],
+      data:[{
+        value:totalIncome
+      }],
       itemStyle: {
         color: '#388E3C', // Dark green
       },
@@ -56,7 +61,9 @@ const HorizontalBar = () => {
       name: 'Expense',
       type: 'bar',
       stack: 'total',
-      data: [2000],
+   data:[{
+        value:totalExpense
+      }] , 
       itemStyle: {
         color: '#C62828', // Dark red
       },
@@ -65,8 +72,10 @@ const HorizontalBar = () => {
       name: 'Savings',
       type: 'bar',
       stack: 'total',
-      data: [1000],
-      itemStyle: {
+   data:[{
+        value:totalSavings
+      }],
+    itemStyle: {
         color: '#1565C0', // Dark blue
       },
     },
@@ -80,7 +89,7 @@ const HorizontalBar = () => {
       chart.dispose();
       window.removeEventListener('resize', chart.resize);
     };
-  }, []);
+  }, [totalExpense,totalIncome,totalSavings]);
 
 return (
   <div className="p-1 h-full mb-0.5 overflow-hidden">

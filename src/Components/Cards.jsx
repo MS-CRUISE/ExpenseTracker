@@ -17,7 +17,7 @@ const getAmountColor = () => {
 
 
 
-    return<><div className="bg-white p-3 rounded-lg shadow w-[260px] h-[100px]">
+    return<><div className="bg-white p-3 rounded-lg shadow w-[260px] h-[120px]">
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className={`text-2xl font-bold ${getAmountColor()}`}>{amount}</p>
     </div>
